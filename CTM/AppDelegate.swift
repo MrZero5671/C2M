@@ -9,6 +9,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var permissionCheckTimer: Timer?
 
     private let minimizeFeatureKey = "isMinimizeFeatureEnabled"
+    private let languageKey = "appLanguage"
 
     var isMinimizeFeatureEnabled: Bool {
         get {
@@ -16,6 +17,55 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return UserDefaults.standard.bool(forKey: minimizeFeatureKey)
         }
         set { UserDefaults.standard.set(newValue, forKey: minimizeFeatureKey) }
+    }
+
+    // MARK: - Language
+
+    enum AppLanguage: String {
+        case english = "en"
+        case vietnamese = "vi"
+    }
+
+    var currentLanguage: AppLanguage {
+        get {
+            if let raw = UserDefaults.standard.string(forKey: languageKey), let lang = AppLanguage(rawValue: raw) {
+                return lang
+            }
+            return .english
+        }
+        set { UserDefaults.standard.set(newValue.rawValue, forKey: languageKey) }
+    }
+
+    struct Strings {
+        let minimizeToggle: String
+        let launchAtLogin: String
+        let language: String
+        let english: String
+        let vietnamese: String
+        let quit: String
+    }
+
+    var strings: Strings {
+        switch currentLanguage {
+        case .vietnamese:
+            return Strings(
+                minimizeToggle: "Bật minimize khi click icon Dock",
+                launchAtLogin: "Khởi động cùng macOS",
+                language: "Ngôn ngữ",
+                english: "Tiếng Anh",
+                vietnamese: "Tiếng Việt",
+                quit: "Thoát"
+            )
+        case .english:
+            return Strings(
+                minimizeToggle: "Minimize on Dock icon click",
+                launchAtLogin: "Launch at login",
+                language: "Language",
+                english: "English",
+                vietnamese: "Vietnamese",
+                quit: "Quit"
+            )
+        }
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -172,10 +222,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func setupMenu() {
+        let s = strings
         rightClickMenu = NSMenu()
 
         let toggleItem = NSMenuItem(
-            title: "Bật minimize khi click icon Dock",
+            title: s.minimizeToggle,
             action: #selector(toggleMinimizeFeature),
             keyEquivalent: ""
         )
@@ -184,7 +235,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         rightClickMenu.addItem(toggleItem)
 
         let launchAtLoginItem = NSMenuItem(
-            title: "Khởi động cùng macOS",
+            title: s.launchAtLogin,
             action: #selector(toggleLaunchAtLogin),
             keyEquivalent: ""
         )
@@ -194,8 +245,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         rightClickMenu.addItem(NSMenuItem.separator())
 
+        // Submenu Language
+        let languageItem = NSMenuItem(title: s.language, action: nil, keyEquivalent: "")
+        let languageSubmenu = NSMenu()
+
+        let englishItem = NSMenuItem(
+            title: s.english,
+            action: #selector(selectEnglish),
+            keyEquivalent: ""
+        )
+        englishItem.target = self
+        englishItem.state = (currentLanguage == .english) ? .on : .off
+        languageSubmenu.addItem(englishItem)
+
+        let vietnameseItem = NSMenuItem(
+            title: s.vietnamese,
+            action: #selector(selectVietnamese),
+            keyEquivalent: ""
+        )
+        vietnameseItem.target = self
+        vietnameseItem.state = (currentLanguage == .vietnamese) ? .on : .off
+        languageSubmenu.addItem(vietnameseItem)
+
+        languageItem.submenu = languageSubmenu
+        rightClickMenu.addItem(languageItem)
+
+        rightClickMenu.addItem(NSMenuItem.separator())
+
         let quitItem = NSMenuItem(
-            title: "Thoát",
+            title: s.quit,
             action: #selector(quitApp),
             keyEquivalent: "q"
         )
@@ -220,6 +298,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let newState = !isLaunchAtLoginEnabled()
         setLaunchAtLogin(enabled: newState)
         sender.state = newState ? .on : .off
+    }
+
+    @objc func selectEnglish() {
+        currentLanguage = .english
+        setupMenu()
+    }
+
+    @objc func selectVietnamese() {
+        currentLanguage = .vietnamese
+        setupMenu()
     }
 
     @objc func quitApp() {

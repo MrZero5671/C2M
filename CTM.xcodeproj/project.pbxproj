@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		3CB185D6305D4B43000506A2 /* C2M.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C2M.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CB185D6305D4B43000506A2 /* CTM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		3CB185D8305D4B43000506A2 /* C2M */ = {
+		3CB185D8305D4B43000506A2 /* CTM */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = C2M;
+			path = CTM;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -30,7 +30,7 @@
 		3CB185CD305D4B43000506A2 = {
 			isa = PBXGroup;
 			children = (
-				3CB185D8305D4B43000506A2 /* C2M */,
+				3CB185D8305D4B43000506A2 /* CTM */,
 				3CB185D7305D4B43000506A2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -38,7 +38,7 @@
 		3CB185D7305D4B43000506A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3CB185D6305D4B43000506A2 /* C2M.app */,
+				3CB185D6305D4B43000506A2 /* CTM.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,9 +46,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3CB185D5305D4B43000506A2 /* C2M */ = {
+		3CB185D5305D4B43000506A2 /* CTM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3CB185E1305D4B44000506A2 /* Build configuration list for PBXNativeTarget "C2M" */;
+			buildConfigurationList = 3CB185E1305D4B44000506A2 /* Build configuration list for PBXNativeTarget "CTM" */;
 			buildPhases = (
 				3CB185D2305D4B43000506A2 /* Sources */,
 				3CB185D3305D4B43000506A2 /* Frameworks */,
@@ -57,11 +57,11 @@
 			buildRules = (
 			);
 			fileSystemSynchronizedGroups = (
-				3CB185D8305D4B43000506A2 /* C2M */,
+				3CB185D8305D4B43000506A2 /* CTM */,
 			);
-			name = C2M;
+			name = CTM;
 			productName = C2M;
-			productReference = 3CB185D6305D4B43000506A2 /* C2M.app */;
+			productReference = 3CB185D6305D4B43000506A2 /* CTM.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -79,7 +79,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3CB185D1305D4B43000506A2 /* Build configuration list for PBXProject "C2M" */;
+			buildConfigurationList = 3CB185D1305D4B43000506A2 /* Build configuration list for PBXProject "CTM" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -93,7 +93,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3CB185D5305D4B43000506A2 /* C2M */,
+				3CB185D5305D4B43000506A2 /* CTM */,
 			);
 		};
 /* End PBXProject section */
@@ -115,7 +115,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		3CB185DF305D4B44000506A2 /* Debug configuration for PBXProject "C2M" */ = {
+		3CB185DF305D4B44000506A2 /* Debug configuration for PBXProject "CTM" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -178,7 +178,7 @@
 			};
 			name = Debug;
 		};
-		3CB185E0305D4B44000506A2 /* Release configuration for PBXProject "C2M" */ = {
+		3CB185E0305D4B44000506A2 /* Release configuration for PBXProject "CTM" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -233,7 +233,7 @@
 			};
 			name = Release;
 		};
-		3CB185E2305D4B44000506A2 /* Debug configuration for PBXNativeTarget "C2M" */ = {
+		3CB185E2305D4B44000506A2 /* Debug configuration for PBXNativeTarget "CTM" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -250,8 +250,9 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = DrZero.C2M;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = DrZero.CTM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -263,7 +264,7 @@
 			};
 			name = Debug;
 		};
-		3CB185E3305D4B44000506A2 /* Release configuration for PBXNativeTarget "C2M" */ = {
+		3CB185E3305D4B44000506A2 /* Release configuration for PBXNativeTarget "CTM" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -280,8 +281,9 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = DrZero.C2M;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = DrZero.CTM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -296,19 +298,19 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3CB185D1305D4B43000506A2 /* Build configuration list for PBXProject "C2M" */ = {
+		3CB185D1305D4B43000506A2 /* Build configuration list for PBXProject "CTM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3CB185DF305D4B44000506A2 /* Debug configuration for PBXProject "C2M" */,
-				3CB185E0305D4B44000506A2 /* Release configuration for PBXProject "C2M" */,
+				3CB185DF305D4B44000506A2 /* Debug configuration for PBXProject "CTM" */,
+				3CB185E0305D4B44000506A2 /* Release configuration for PBXProject "CTM" */,
 			);
 			defaultConfigurationName = Release;
 		};
-		3CB185E1305D4B44000506A2 /* Build configuration list for PBXNativeTarget "C2M" */ = {
+		3CB185E1305D4B44000506A2 /* Build configuration list for PBXNativeTarget "CTM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3CB185E2305D4B44000506A2 /* Debug configuration for PBXNativeTarget "C2M" */,
-				3CB185E3305D4B44000506A2 /* Release configuration for PBXNativeTarget "C2M" */,
+				3CB185E2305D4B44000506A2 /* Debug configuration for PBXNativeTarget "CTM" */,
+				3CB185E3305D4B44000506A2 /* Release configuration for PBXNativeTarget "CTM" */,
 			);
 			defaultConfigurationName = Release;
 		};
