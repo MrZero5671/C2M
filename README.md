@@ -5,7 +5,8 @@
 ## You can minimize an application window on macOS simply by clicking the application's icon on the Dock!
 
 <img width="700" height="410" alt="dock-demo" src="https://github.com/user-attachments/assets/39973abc-b046-4bf7-bb14-e4b3a120824b" />
-<img width="380" height="304" alt="menu-demo" src="https://github.com/user-attachments/assets/738d474c-e81f-4e7a-9ef9-2f1b6bfdf728" />
+<img width="380" height="304" alt="menu-demo2" src="https://github.com/user-attachments/assets/2b70c637-d937-4c34-9a14-709904dc0d55" />
+
 
 ## 📥 Download
 Download the latest version for macOS (`.dmg`) at the section [GitHub Releases](https://github.com/MrZero5671/CTM/releases).
